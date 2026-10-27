@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#12131d" />
+  <meta name="description" content="AURIX is a sleek, offline-ready invoice workspace with clients, analytics, and printable invoices." />
+  <title>AURIX — Invoice Studio</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
+    <symbol id="ic-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.8"/></symbol>
+    <symbol id="ic-invoice" viewBox="0 0 24 24"><path d="M7 3h10l3 3v15l-4-2-4 2-4-2-4 2V6a3 3 0 0 1 3-3Z"/><path d="M9 9h7M9 13h7"/></symbol>
+    <symbol id="ic-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M17 15a5 5 0 0 1 4 5"/></symbol>
+    <symbol id="ic-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 16v-4M12 16V8M17 16V5"/></symbol>
+    <symbol id="ic-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l-1.7 1.7a1.6 1.6 0 0 0-1.8-.3l-1.1.5-.4 2.3h-2.4l-.4-2.3-1.1-.5a1.6 1.6 0 0 0-1.8.3l-1.7-1.7a1.6 1.6 0 0 0 .3-1.8L7 14l-2.3-.4v-2.4L7 10.8l.5-1.1a1.6 1.6 0 0 0-.3-1.8l1.7-1.7a1.6 1.6 0 0 0 1.8.3l1.1-.5.4-2.3h2.4L15 6l1.1.5a1.6 1.6 0 0 0 1.8-.3l1.7 1.7a1.6 1.6 0 0 0-.3 1.8l.5 1.1 2.3.4v2.4L19.8 14Z" transform="translate(-1.1 -0.4) scale(1.02)"/></symbol>
+    <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="ic-up" viewBox="0 0 24 24"><path d="m5 15 6-6 4 4 5-6M15 7h5v5"/></symbol>
+    <symbol id="ic-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+    <symbol id="ic-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M6 6V4h12"/><path d="M16 15h2"/></symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="ic-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></symbol>
+    <symbol id="ic-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="ic-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="ic-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="ic-print" viewBox="0 0 24 24"><path d="M6 8V3h12v5M6 18H4a2 2 0 0 1-2-2v-5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6zM17 11h1"/></symbol>
+    <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 3h4l1 4H9l1-4ZM6 7l1 14h10l1-14M10 11v6M14 11v6"/></symbol>
+    <symbol id="ic-edit" viewBox="0 0 24 24"><path d="m4 16 11-11 4 4-11 11-5 1 1-5ZM13 7l4 4"/></symbol>
+    <symbol id="ic-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="ic-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+    <symbol id="ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M20 16a8 8 0 0 1-12-12 8.5 8.5 0 1 0 12 12Z"/></symbol>
+    <symbol id="ic-sparkle" viewBox="0 0 24 24"><path d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2Z"/></symbol>
+    <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></symbol>
+    <symbol id="ic-filter" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8Z"/></symbol>
+    <symbol id="ic-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H5V5a2 2 0 0 1 2-2Z"/><path d="M14 3v6h5M9 14h6M9 18h6"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a href="#overview" class="brand" data-nav="overview"><span class="brand-icon">✳</span><span>AURIX<span class="brand-sub">INVOICE STUDIO</span></span></a>
+      <div class="workspace-picker"><div class="work-avatar">A</div><div class="workspace-name"><strong id="sidebar-business">Your workspace</strong><span>Personal workspace</span></div><svg class="icon"><use href="#ic-chevron"/></svg></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="sidebar-nav" id="sidebar-nav">
+        <a href="#overview" data-nav="overview" class="nav-link active"><svg class="icon"><use href="#ic-grid"/></svg><span>Overview</span></a>
+        <a href="#invoices" data-nav="invoices" class="nav-link"><svg class="icon"><use href="#ic-invoice"/></svg><span>Invoices</span><span class="nav-count" id="invoice-count">0</span></a>
+        <a href="#clients" data-nav="clients" class="nav-link"><svg class="icon"><use href="#ic-users"/></svg><span>Clients</span></a>
+        <a href="#reports" data-nav="reports" class="nav-link"><svg class="icon"><use href="#ic-chart"/></svg><span>Reports</span></a>
+      </nav>
+      <div class="nav-label secondary-label">PREFERENCES</div>
+      <nav class="sidebar-nav"><a href="#settings" data-nav="settings" class="nav-link"><svg class="icon"><use href="#ic-settings"/></svg><span>Settings</span></a></nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><span class="tip-icon"><svg class="icon"><use href="#ic-sparkle"/></svg></span><strong>Made for makers.</strong><p>Less admin. More creating. Everything stays in your browser.</p><button class="tip-action" data-action="new-invoice">Create an invoice <span>↗</span></button></div>
+        <div class="sidebar-footer"><span class="online-dot"></span> Local-first workspace <span class="version">v1.0</span></div>
+      </div>
+    </aside>
+    <div class="mobile-shade" id="mobile-shade"></div>
+    <main class="main" id="main">
+      <header class="topbar"><div class="top-left"><button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open navigation"><svg class="icon"><use href="#ic-menu"/></svg></button><span class="breadcrumb-root">Workspace</span><span class="breadcrumb-separator">/</span><span class="breadcrumb-current" id="breadcrumb">Overview</span></div><div class="top-right"><div class="search-shell"><svg class="icon"><use href="#ic-search"/></svg><input id="global-search" aria-label="Search invoices and clients" placeholder="Search anything..." /><kbd>/</kbd></div><button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><svg class="icon"><use href="#ic-moon"/></svg></button><button class="top-avatar" id="profile-btn" aria-label="Open settings">A</button></div></header>
+      <div class="content" id="content" aria-live="polite"></div>
+      <footer class="app-footer"><span>© <span id="footer-year"></span> AURIX STUDIO</span><span>Designed to make the details feel effortless ✳</span></footer>
+    </main>
+  </div>
+  <div id="modal-root"></div><div id="toast-root" aria-live="polite"></div>
+  <input type="file" id="import-file" accept="application/json,.json" hidden />
+</body>
+</html>
